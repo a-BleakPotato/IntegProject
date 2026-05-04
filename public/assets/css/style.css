@@ -118,7 +118,7 @@ section {
 
 .hero-section {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
 }
 
 .hero-text-section {
@@ -179,7 +179,7 @@ p {
 }
 
 .about-section {
-    margin: 120px 0 120px 150px;
+    margin: 120px 100px 120px 150px;
 }
 
 .folder-img {
