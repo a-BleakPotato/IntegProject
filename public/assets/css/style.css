@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #b4e9ff;
+    --accent-color: #072843;
+    --primary-text-color: #072843;
+    --secondary-text-color: #0083bc;
+    --line-color: #072843;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding-top: 16px;
+    margin: 0 130px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #072843;
+    border-radius: 50px;
+}
+
+nav ul {
+    display: inline-flex;
+    list-style: none;
+    gap: 80px;
+    flex: 1;
+    align-items: center;
+}
+
+nav ul:first-child {
+    justify-content: flex-start;
+    padding-bottom: 24px;
+}
+
+nav ul:last-child {
+    justify-content: flex-end;
+    padding-bottom: 24px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 20px;
+}
+
+nav a:hover,
+nav a.active {
+    font-weight: 700;
+}
+
+.signup-btn {
+    position: relative;
+    display: inline-flex;
+    margin-right: 8px;
+    padding: 13px 32px;
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 20px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50px;
+    box-shadow: 8px 8px 0 var(--accent-color);
+    transform: translate(0, 0);
+    transition: all 0.15s ease-in-out;
+}
+
+.signup-btn:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+}
+
+.signup-btn:active {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
+}
+
+section {
+    scroll-margin-top: 220px;
+    min-height: auto;
+}
+
+.home-section {
+    margin: 120px 150px 120px 150px;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.hero-text-section {
+    padding-top: 50px;
+}
+
+.hero-img {
+    padding-top: 60px;
+    justify-self: end;
+}
+
+.hero-img-svg {
+    height: 371px;
+    width: 866px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+    height: 216px;
+    width: 621px;
+}
+
+span {
+    font-weight: 700;
+}
+
+p {
+    font-size: 24px;
+    padding: 40px 0 40px 0;
+    width: 545px;
+}
+
+.getstarted-btn {
+    position: relative;
+    display: inline-flex;
+    padding: 13px 32px;
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    border: 3px solid var(--accent-color);
+    border-radius: 50px;
+    box-shadow: 8px 8px 0 var(--accent-color);
+    transform: translate(0, 0);
+    transition: all 0.15s ease-in-out;
+}
+
+.getstarted-btn:active {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
+}
+
+.getstarted-btn:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+}
+
+.about-section {
+    margin: 120px 0 120px 150px;
+}
+
+.folder-img {
+    padding: 60px 0 0 100px;
+    justify-self: start;
+}
+
+.folder-img-svg {
+    height: 445px;
+    width: 612px;
+}
+
+.about-text-section {
+    padding: 60px 100px 0 0;
+    justify-self: end;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 120px 130px 80px 130px;
+}
+
+.h1-footer {
+    padding-top: 80px;
+    height: 100%;
+}
+
+hr {
+    border: none;
+    background-color: var(--accent-color);
+    height: 3px;
+    width: 100%;
+}
+
+.divider {
+    border: none;
+    background-color: var(--primary-color);
+    height: 3px;
+}
+
+.footer-section p {
+    text-align: center;
+    width: 100%;
+}
+
+.link a {
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+footer ul {
+    display: inline-flex;
+    list-style: none;
+    gap: 28px;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.copyright {
+    font-size: 16px;
+}

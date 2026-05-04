@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #b4e9ff;
+    --accent-color: #072843;
+    --primary-text-color: #072843;
+    --secondary-text-color: #0083bc;
+    --line-color: #072843;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+.wrap {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.signin-form {
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    align-content: center;
+}
+
+form {
+    justify-self: center;
+}
+
+.container {
+    width: 488px;
+}
+
+.signin {
+    font-size: 48px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 28px;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input {
+    padding: 16px;
+    border-radius: 10px;
+    border: 3px solid var(--accent-color);
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-color);
+    box-shadow: 8px 8px 0 var(--accent-color);
+}
+
+input:focus {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
+    transition: all 0.15s ease-in-out;
+    outline: none;
+}
+
+.loginbtn {
+    display: block;
+    width: 100%;
+    margin-top: 48px;
+    padding: 12px 0;
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50px;
+    box-shadow: 8px 8px 0 var(--accent-color);
+    transform: translate(0, 0);
+    transition: all 0.15s ease-in-out;
+}
+
+.loginbtn:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.loginbtn:active {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
+}
+
+.container p {
+    font-size: 16px;
+    padding-top: 28px;
+    text-align: center;
+}
+
+a {
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper button {
+    position: absolute;
+    right: 16px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.title-section {
+    justify-self: center;
+}
+
+#registration-svg {
+    width: 600px;
+    max-width: 600px;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.title-h1 {
+    font-size: 48px;
+    font-weight: 700;
+    padding: 40px 0;
+}
+
+p {
+    font-size: 24px;
+    width: 509px;
+}
