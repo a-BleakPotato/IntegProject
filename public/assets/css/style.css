@@ -29,24 +29,28 @@ body {
     max-width: 100%;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    padding-top: 16px;
-    margin: 0 130px;
-    align-items: center;
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+nav {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 16px 130px 0 130px;
+    margin: 0;
+    align-items: center;
 }
 
 nav::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 130px;
+    right: 130px;
     height: 3px;
     background-color: #072843;
     border-radius: 50px;
@@ -79,6 +83,7 @@ nav ul li a {
 nav a:hover,
 nav a.active {
     font-weight: 700;
+    transition: all 0.15s ease-in-out;
 }
 
 .signup-btn {
@@ -114,6 +119,7 @@ section {
 
 .home-section {
     margin: 120px 150px 120px 150px;
+    height: 70vh;
 }
 
 .hero-section {
@@ -123,6 +129,7 @@ section {
 
 .hero-text-section {
     padding-top: 50px;
+    padding-left: 50px;
 }
 
 .hero-img {
@@ -180,6 +187,7 @@ p {
 
 .about-section {
     margin: 120px 100px 120px 150px;
+    height: 70vh;
 }
 
 .folder-img {
@@ -197,35 +205,49 @@ p {
     justify-self: end;
 }
 
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+footer {
     margin: 120px 130px 80px 130px;
-}
-
-.h1-footer {
-    padding-top: 80px;
-    height: 100%;
 }
 
 hr {
     border: none;
+    border-radius: 50px;
     background-color: var(--accent-color);
     height: 3px;
     width: 100%;
 }
 
-.divider {
-    border: none;
-    background-color: var(--primary-color);
-    height: 3px;
+.footer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 20px 30px 20px;
+}
+
+.title-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.h2-footer {
+    font-size: 32px;
+    height: 100%;
+    width: 19rem;
+    align-content: center;
 }
 
 .footer-section p {
-    text-align: center;
-    width: 100%;
+    text-align: start;
+    font-size: 20px;
+    width: 40vw;
+    border-left: 1px solid var(--accent-color);
+    margin-left: 20px;
+    padding: 20px 35px;
+}
+
+.links-footer {
+    padding: 20px;
+    justify-self: center;
+    align-content: center;
 }
 
 .link a {
@@ -236,12 +258,6 @@ hr {
 footer ul {
     display: inline-flex;
     list-style: none;
-    gap: 28px;
+    gap: 35px;
     flex: 1;
-    align-items: center;
-    padding-bottom: 40px;
-}
-
-.copyright {
-    font-size: 16px;
 }

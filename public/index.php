@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="wrapper">
+    <div class="wrapper">
+        <header>
             <nav>
                 <ul>
                     <li>
@@ -32,65 +32,68 @@
                     </li>
                 </ul>
             </nav>
-            <section class="home-section" id="home-section">
-                <div class="hero-section">
-                    <div class="hero-text-section">
-                        <h1>
-                            <span class="title">Develop, Build, and Test.</span><br />
-                            Now made easier with the use of Fake Data!
-                        </h1>
-                        <p>
-                            Get Free Fake Rest API for Placeholder JSON Data
-                            for your Frontend.
-                        </p>
-                        <div class="btn">
-                            <a class="getstarted-btn" href="#">Get Started</a>
-                        </div>
-                    </div>
-                    <div class="hero-img">
-                        <img
-                            class="hero-img-svg"
-                            src="assets/svg/undraw_code-thinking_0vf2.svg"
-                            alt="EEEE" />
-                    </div>
-                </div>
-            </section>
-            <hr class="divider" />
-            <section class="about-section" id="about-section">
-                <div class="hero-section">
-                    <div class="folder-img">
-                        <img
-                            class="folder-img-svg"
-                            src="assets/svg/undraw_folder_8dxv.svg"
-                            alt="EEEE" />
-                    </div>
-                    <div class="about-text-section">
-                        <h1>
-                            <span class="title">Ready to use Resources.</span><br />
-                            From Dummy Text to Placeholder Images —
-                        </h1>
-                        <p>
-                            DummyJSON API allows you to access 10 diverse
-                            datasets with JSON Placeholder Data.
-                        </p>
-                        <div class="btn">
-                            <a class="getstarted-btn" href="#">Try it Now!</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="divider" />
-            <footer>
-                <div class="footer-section">
-                    <hr />
-                    <h1 class="h1-footer">
-                        <span class="title">Support the Developer!</span>
+        </header>
+        <section class="home-section" id="home-section">
+            <div class="hero-section">
+                <div class="hero-text-section">
+                    <h1>
+                        <span class="title">Develop, Build, and Test.</span><br />
+                        Now made easier with the use of Fake Data!
                     </h1>
                     <p>
-                        DummyJSON API is made by Ovi, show your support by
-                        visiting the <br />
-                        <span class="link"><a href="https://dummyjson.com/">Official Website for DummyJSON API</a></span>
+                        Get Free Fake Rest API for Placeholder JSON Data
+                        for your Frontend.
                     </p>
+                    <div class="btn">
+                        <a class="getstarted-btn" href="#">Get Started</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img
+                        class="hero-img-svg"
+                        src="assets/svg/undraw_code-thinking_0vf2.svg"
+                        alt="EEEE" />
+                </div>
+            </div>
+        </section>
+        <section class="about-section" id="about-section">
+            <div class="hero-section">
+                <div class="folder-img">
+                    <img
+                        class="folder-img-svg"
+                        src="assets/svg/undraw_folder_8dxv.svg"
+                        alt="EEEE" />
+                </div>
+                <div class="about-text-section">
+                    <h1>
+                        <span class="title">Ready to use Resources.</span><br />
+                        From Dummy Text to Placeholder Images —
+                    </h1>
+                    <p>
+                        DummyJSON API allows you to access 10 diverse
+                        datasets with JSON Placeholder Data.
+                    </p>
+                    <div class="btn">
+                        <a class="getstarted-btn" href="#">Try it Now!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <hr />
+            <div class="footer-section">
+                <div class="title-footer">
+                    <h2 class="h2-footer">
+                        <span class="title">DummyJSON API</span>
+                    </h2>
+                    <p>
+                        Visit the Official Website
+                        <span class="link"><a href="https://dummyjson.com/">Here</a></span><br>
+                        &copy; 2026 DummyJSON API Web App. All Rights
+                        Reserved.
+                    </p>
+                </div>
+                <div class="links-footer">
                     <ul>
                         <li>
                             <a href="https://github.com/Ovi/DummyJSON"><img
@@ -109,14 +112,10 @@
                                     alt="LinkedIn" /></a>
                         </li>
                     </ul>
-                    <p class="copyright">
-                        &copy; 2026 DummyJSON API Web App. All Rights
-                        Reserved.
-                    </p>
                 </div>
-            </footer>
-        </div>
-    </header>
+            </div>
+        </footer>
+    </div>
     <script src="assets/js/script.js" defer></script>
 </body>
 
