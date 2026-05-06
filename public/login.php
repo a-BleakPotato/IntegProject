@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img
                 src="assets/svg/undraw_sign-in_uva0.svg"
                 alt="Sign In svg"
-                id="registration-svg" />
+                id="login-svg" />
             <h1 class="title-h1">Develop, Build, and Test</h1>
             <p>
                 With DummyJSON API, Get instant dummy JSON data for your

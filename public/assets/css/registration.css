@@ -22,46 +22,50 @@ body {
 }
 
 .wrap {
-    min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 40px;
+    min-height: 100vh;
 }
 
 .signup-form {
     background-color: var(--primary-color);
-    min-height: 100vh;
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 100%;
     align-content: center;
 }
 
 form {
-    justify-self: center;
+    width: 100%;
 }
 
 .container {
-    width: 488px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
 }
 
 .signup {
-    font-size: 48px;
+    font-size: clamp(28px, 5vw, 48px);
+    text-align: center;
 }
 
 .row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-top: 28px;
+    margin-top: 20px;
 }
 
 .input-group label {
-    margin-bottom: 8px;
-    font-size: 20px;
+    margin-bottom: 6px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -83,6 +87,21 @@ input:focus {
     outline: none;
 }
 
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper button {
+    position: absolute;
+    right: 12px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+}
+
 .registrationbtn {
     display: block;
     width: 100%;
@@ -91,7 +110,7 @@ input:focus {
     background-color: var(--secondary-text-color);
     color: var(--primary-color);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     border: 3px solid var(--accent-color);
     border-radius: 50px;
     box-shadow: 8px 8px 0 var(--accent-color);
@@ -111,8 +130,8 @@ input:focus {
 }
 
 .container p {
-    font-size: 16px;
-    padding-top: 28px;
+    font-size: 14px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -122,39 +141,50 @@ a {
     text-decoration: none;
 }
 
-.password-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-wrapper button {
-    position: absolute;
-    right: 16px;
-    padding: 4px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    border: none;
-}
-
 .title-section {
-    justify-self: center;
+    display: none;
 }
 
-#registration-svg {
-    width: 600px;
-    max-width: 600px;
-    height: auto;
-    padding-bottom: 40px;
+@media (min-width: 600px) {
+    .row {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .signup-form {
+        padding: 40px;
+    }
 }
 
-.title-h1 {
-    font-size: 48px;
-    font-weight: 700;
-    padding: 40px 0;
-}
+@media (min-width: 1025px) {
+    .wrap {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 60px;
+        padding: 40px;
+    }
 
-p {
-    font-size: 24px;
-    width: 509px;
+    .title-section {
+        display: block;
+        text-align: left;
+        padding: 20px;
+    }
+
+    #registration-svg {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto 20px;
+    }
+
+    .title-h1 {
+        font-size: clamp(28px, 5vw, 48px);
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .title-section p {
+        font-size: 16px;
+        max-width: 500px;
+    }
 }
