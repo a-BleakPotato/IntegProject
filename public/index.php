@@ -16,21 +16,57 @@
     <div class="wrapper">
         <header>
             <nav>
-                <ul>
-                    <li>
-                        <a href="#home-section" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="#about-section">About</a>
-                    </li>
-                </ul>
-                <div class="logo">DummyJSON</div>
-                <ul>
-                    <li><a href="login.php">Sign In</a></li>
-                    <li>
-                        <a href="registration.php" class="signup-btn">Sign Up</a>
-                    </li>
-                </ul>
+                <button class="hamburger" id="hamburger">
+                    <img src="assets/svg/hamburger.svg" alt="☰">
+                </button>
+                <div class="nav-left">
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#home-section" class="active">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about-section">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo">DummyJSON API</div>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li>
+                            <a href="login.php">Sign In</a>
+                        </li>
+
+                        <li>
+                            <a href="registration.php" class="signup-btn">
+                                Sign Up
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-menu" id="navMenu">
+                    <!-- CLOSE BUTTON -->
+                    <button class="close-menu" id="closeMenu">
+                        <img src="assets/svg/close.svg" alt="✕">
+                    </button>
+                    <!-- MOBILE LINKS -->
+                    <ul class="mobile-links">
+                        <li>
+                            <a href="#home-section">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about-section">About</a>
+                        </li>
+                        <li>
+                            <a href="login.php">Sign In</a>
+                        </li>
+                        <li>
+                            <a href="registration.php" class="signup-btn">
+                                Sign Up
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <section class="home-section" id="home-section">
@@ -45,7 +81,7 @@
                         for your Frontend.
                     </p>
                     <div class="btn">
-                        <a class="getstarted-btn" href="#">Get Started</a>
+                        <a class="getstarted-btn" href="registration.php">Get Started</a>
                     </div>
                 </div>
                 <div class="hero-img">
@@ -74,7 +110,7 @@
                         datasets with JSON Placeholder Data.
                     </p>
                     <div class="btn">
-                        <a class="getstarted-btn" href="#">Try it Now!</a>
+                        <a class="getstarted-btn" href="registration.php">Try it Now!</a>
                     </div>
                 </div>
             </div>
@@ -89,8 +125,7 @@
                     <p>
                         Visit the Official Website
                         <span class="link"><a href="https://dummyjson.com/">Here</a></span><br>
-                        &copy; 2026 DummyJSON API Web App. All Rights
-                        Reserved.
+                        &copy; 2026 DummyJSON API. All Rights Reserved.
                     </p>
                 </div>
                 <div class="links-footer">

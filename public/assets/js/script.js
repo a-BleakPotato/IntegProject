@@ -18,3 +18,21 @@ window.onscroll = () => {
         }
     });
 };
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
