@@ -256,7 +256,7 @@ hr {
 }
 
 .h2-footer {
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .footer-section p {
@@ -303,7 +303,7 @@ footer ul {
     }
 
     .footer-section {
-        gap: 60px;
+        gap: 10px;
     }
 }
 
@@ -344,7 +344,7 @@ footer ul {
 
     .home-section,
     .about-section {
-        padding: 120px 200px;
+        padding: 120px 150px;
     }
 
     .hero-text-section,
