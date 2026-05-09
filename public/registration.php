@@ -6,6 +6,7 @@ $username = "root";
 $password = "";
 
 $message = "";
+$messageType = "";
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -28,10 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validation
     if (empty($firstname) || empty($lastname) || empty($email) || empty($user) || empty($pass) || empty($confirm)) {
         $message = "All fields are required.";
+        $messageType = "error";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $message = "Invalid email format.";
+        $messageType = "error";
     } elseif ($pass !== $confirm) {
         $message = "Passwords do not match.";
+        $messageType = "error";
     } else {
 
         // Check duplicates
@@ -40,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->rowCount() > 0) {
             $message = "Email or username already exists.";
+            $messageType = "error";
         } else {
 
             // Hash password
@@ -49,7 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare("INSERT INTO users (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
             $stmt->execute([$firstname, $lastname, $email, $user, $hashedPassword]);
 
-            $message = "Registration successful!";
+            $message = "Registration successful! Redirecting...";
+            $messageType = "success";
+
+            header("refresh:3;url=login.php");
         }
     }
 }
@@ -75,11 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="" method="POST">
                 <div class="container">
                     <h1 class="signup">Sign Up</h1>
-                    <?php if (!empty($message)): ?>
-                        <p style="color: red; text-align:center;">
-                            <?php echo $message; ?>
-                        </p>
-                    <?php endif; ?>
                     <div class="row">
                         <div class="input-group">
                             <label for="lastname">Last Name</label>
@@ -154,6 +157,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </button>
                         </div>
                     </div>
+                    <?php if (!empty($message)): ?>
+                        <p class="<?php echo $messageType; ?>">
+                            <?php echo $message; ?>
+                        </p>
+                    <?php endif; ?>
                     <button type="submit" class="registrationbtn">
                         Sign Up
                     </button>

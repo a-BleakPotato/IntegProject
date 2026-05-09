@@ -84,11 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="" method="POST">
                 <div class="container">
                     <h1 class="signin">Sign In</h1>
-                    <?php if (!empty($message)): ?>
-                        <p style="color: red; text-align:center;">
-                            <?php echo $message; ?>
-                        </p>
-                    <?php endif; ?>
                     <div class="input-group">
                         <label for="username-email">Username or Email</label>
                         <input
@@ -117,6 +112,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </button>
                         </div>
                     </div>
+                    <?php if (!empty($message)): ?>
+                        <p style="color: red; text-align: center;">
+                            <?php echo $message; ?>
+                        </p>
+                    <?php endif; ?>
                     <button type="submit" class="loginbtn">Sign In</button>
                     <p>
                         Don't have an account?

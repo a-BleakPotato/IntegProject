@@ -102,6 +102,14 @@ input:focus {
     border: none;
 }
 
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
 .registrationbtn {
     display: block;
     width: 100%;
