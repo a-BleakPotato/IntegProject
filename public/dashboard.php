@@ -15,8 +15,11 @@ if (!isset($_SESSION["user_id"])) {
 </head>
 
 <body>
-
-    <h1>Welcome, <?php echo $_SESSION["username"]; ?>!</h1>
+    <a href="">Dashboard</a>
+    <a href="">Products</a>
+    <a href="">Users</a>
+    <a href="">Posts</a>
+    <h1>Welcome, <?php echo $_SESSION["firstname"]; ?>!</h1>
 
     <a href="logout.php">Logout</a>
 
