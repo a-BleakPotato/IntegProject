@@ -17,7 +17,7 @@
         <header>
             <nav>
                 <button class="hamburger" id="hamburger">
-                    <img src="assets/svg/hamburger.svg" alt="☰">
+                    <img src="assets/svg/solar_hamburger-menu-broken.svg" alt="☰">
                 </button>
                 <div class="nav-left">
                     <ul class="nav-links">

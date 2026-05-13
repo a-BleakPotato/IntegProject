@@ -39,6 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Create session
                 $_SESSION["user_id"] = $user["id"];
                 $_SESSION["username"] = $user["username"];
+                $_SESSION["email"] = $user["email"];
+                $_SESSION["firstname"] = $user["firstname"];
+                $_SESSION["lastname"] = $user["lastname"];
 
                 // Redirect to dashboard
                 header("Location: dashboard.php");
