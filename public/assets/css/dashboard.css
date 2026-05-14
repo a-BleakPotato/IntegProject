@@ -259,7 +259,7 @@ body {
 
     padding: 2rem;
 
-    margin-top: 20px;
+    margin-top: 2rem;
     margin-right: 20px;
     border-radius: 20px;
     background-color: var(--primary-color);
@@ -276,11 +276,12 @@ body {
 .dashboard-section h1 {
     font-size: 48px;
     color: var(--primary-text-color);
+    padding-bottom: 8px;
 }
 
 .dashboard-section p {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--primary-text-color);
 }
 
@@ -291,4 +292,69 @@ body {
     padding: 40px;
     box-shadow: 8px 8px 0 var(--line-color);
     margin: 20px 0 40px 0;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+
+hr {
+    border: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    height: 3px;
+    width: 100%;
+}
+
+.contents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border: 3px solid var(--accent-color);
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 8px 8px 0 var(--accent-color);
+    transition: all 0.15s ease-in-out;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.items h2 {
+    font-size: 32px;
+    color: var(--primary-text-color);
+}
+
+.items p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.items h3 {
+    color: var(--accent-color);
+    padding-top: 20px;
+}
+
+.items img {
+    width: 5rem;
+}
+
+.items:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
 }

@@ -115,9 +115,64 @@ if (!isset($_SESSION["user_id"])) {
                         <?php echo $_SESSION["username"]; ?>!
                     </h1>
                     <p id="date"></p>
-                    <img src="assets/svg/undraw_building-websites_k2zp.svg" alt="">
                 </div>
+                <!-- <img src="assets/svg/undraw_building-websites_k2zp.svg" alt=""> -->
 
+                <h3>
+                    Top Choices
+                </h3>
+                <hr />
+
+                <div class="contents">
+                    <div class="items">
+                        <div class="item-text">
+                            <h2>
+                                Products
+                            </h2>
+                            <p>dummyjson.com/products</p>
+                            <h3>
+                                View Products
+                            </h3>
+                        </div>
+                        <img src="assets/svg/products.svg" alt="">
+                    </div>
+                    <div class="items">
+                        <div class="item-text">
+                            <h2>
+                                Users
+                            </h2>
+                            <p>dummyjson.com/users</p>
+                            <h3>
+                                View Products
+                            </h3>
+                        </div>
+                        <img src="assets/svg/users.svg" alt="">
+                    </div>
+                    <div class="items">
+                        <div class="item-text">
+                            <h2>
+                                Posts
+                            </h2>
+                            <p>dummyjson.com/posts</p>
+                            <h3>
+                                View Products
+                            </h3>
+                        </div>
+                        <img src="assets/svg/posts.svg" alt="">
+                    </div>
+                    <div class="items">
+                        <div class="item-text">
+                            <h2>
+                                Carts
+                            </h2>
+                            <p>dummyjson.com/carts</p>
+                            <h3>
+                                View Products
+                            </h3>
+                        </div>
+                        <img src="assets/svg/products.svg" alt="">
+                    </div>
+                </div>
             </section>
         </main>
 
