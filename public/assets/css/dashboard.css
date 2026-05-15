@@ -122,6 +122,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.nav-link:hover {
+    background-color: var(--secondary-text-color);
+}
+
 /* LINK CONTENT */
 
 .link-content {
@@ -170,7 +174,6 @@ body {
 .nav-link.active .link-text {
     color: var(--primary-text-color);
 }
-
 /* COLLAPSED STATE */
 
 .sidebar.collapsed .logo-text,
@@ -286,12 +289,28 @@ body {
 }
 
 .welcome-box {
+    position: relative;
     border: 3px solid var(--line-color);
     border-radius: 30px;
     background-color: var(--secondary-color);
     padding: 40px;
-    box-shadow: 8px 8px 0 var(--line-color);
     margin: 20px 0 40px 0;
+    box-shadow: 8px 8px 0 var(--line-color);
+    min-height: 250px;
+    overflow: visible;
+}
+
+.welcome-text {
+    position: relative;
+    z-index: 3;
+}
+
+.welcome-box img {
+    position: absolute;
+    right: 100px;
+    bottom: -60px;
+    width: 470px;
+    z-index: 2;
 }
 
 h3 {
@@ -312,7 +331,7 @@ hr {
 .contents {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
+    margin-top: 40px;
     gap: 20px;
 }
 
@@ -336,17 +355,13 @@ hr {
 
 .items h2 {
     font-size: 32px;
+    font-weight: 700;
     color: var(--primary-text-color);
 }
 
 .items p {
     font-size: 16px;
     font-weight: 500;
-}
-
-.items h3 {
-    color: var(--accent-color);
-    padding-top: 20px;
 }
 
 .items img {
@@ -356,5 +371,6 @@ hr {
 .items:hover {
     background-color: var(--secondary-color);
     box-shadow: 2px 2px 0 var(--accent-color);
+    cursor: pointer;
     transform: translate(4px, 4px);
 }

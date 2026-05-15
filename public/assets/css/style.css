@@ -278,6 +278,11 @@ footer ul {
     color: var(--secondary-text-color);
 }
 
+.link a:hover {
+    color: var(--primary-text-color);
+    transition: 0.2s ease;
+}
+
 @media (min-width: 768px) {
     nav {
         padding: 24px 40px;

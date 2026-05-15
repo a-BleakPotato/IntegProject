@@ -40,12 +40,13 @@ if (!isset($_SESSION["user_id"])) {
             <!-- MIDDLE -->
             <div class="sidebar-links">
                 <!-- DASHBOARD -->
-                <a href="dashboard/php" class="nav-link active">
+                <a href="dashboard.php" class="nav-link">
                     <div class="link-content">
 
                         <img
                             class="nav-icon"
-                            src="assets/svg/dashboard-active.svg"
+                            src="assets/svg/dashboard.svg"
+                            data-hover="assets/svg/dashboard-hover.svg"
                             alt="">
 
                         <span class="link-text">
@@ -55,13 +56,12 @@ if (!isset($_SESSION["user_id"])) {
                 </a>
 
                 <!-- PRODUCTS -->
-                <a href="products.php" class="nav-link">
+                <a href="#" class="nav-link active">
                     <div class="link-content">
 
                         <img
                             class="nav-icon"
-                            src="assets/svg/products.svg"
-                            data-hover="assets/svg/products-hover.svg"
+                            src="assets/svg/products-active.svg"
                             alt="">
 
                         <span class="link-text">
@@ -136,62 +136,8 @@ if (!isset($_SESSION["user_id"])) {
         <main class="main-content">
             <section class="dashboard-section">
                 <h2>
-                    Dashboard
+                    Products
                 </h2>
-                <div class="welcome-box">
-                    <div class="welcome-text">
-                        <h1>
-                            Welcome,
-                            <?php echo $_SESSION["username"]; ?>!
-                        </h1>
-                        <p id="date"></p>
-                    </div>
-                    <img src="assets/svg/undraw_building-websites_k2zp.svg" alt="">
-
-                </div>
-
-                <h3>
-                    Top Resources
-                </h3>
-                <hr />
-
-                <div class="contents">
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Products
-                            </h2>
-                            <p>https://dummyjson.com/products</p>
-                        </div>
-                        <img src="assets/svg/products-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Users
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
-                        </div>
-                        <img src="assets/svg/users-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Carts
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
-                        </div>
-                        <img src="assets/svg/cart-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Posts
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
-                        </div>
-                        <img src="assets/svg/posts-dashboard.svg" alt="">
-                    </div>
             </section>
         </main>
 
