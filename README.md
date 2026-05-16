@@ -1,267 +1,223 @@
 # IntegProject
 
-A lightweight PHP integration project designed for experimenting with backend functionality, frontend assets, and simple web application workflows.
+A modern PHP web application built with a clean dashboard interface, authentication system, and modular page structure. This project demonstrates full-stack web development concepts using PHP, MySQL, JavaScript, HTML, and CSS.
 
 ---
 
-## 📖 Overview
+## 📌 Overview
 
-This repository contains a basic PHP web project structure that can be used for:
+**IntegProject** is a web-based application designed with a responsive user interface and organized backend structure. It includes user authentication, dashboard navigation, and management pages for users, posts, and products.
 
-- Learning PHP fundamentals
-- Testing backend integrations
-- Building simple web applications
-- Organizing frontend and backend resources
-- Practicing project structure and deployment
-
-The project includes a public directory for frontend assets and a PHP execution/testing file.
+The project is structured for maintainability and scalability using reusable components and separated assets.
 
 ---
 
-# 📂 Project Structure
+## 🚀 Features
 
-```bash
+* 🔐 User Registration & Login System
+* 📊 Interactive Dashboard
+* 👥 User Management Page
+* 📝 Posts Management
+* 🛒 Products Page
+* 📱 Responsive UI Design
+* 🎨 Custom CSS Styling
+* ⚡ JavaScript Interactivity
+* 📂 Organized Project Structure
+* 🧩 Reusable Sidebar Component
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* PHP
+
+### Database
+
+* MySQL
+
+### Development Environment
+
+* XAMPP
+
+---
+
+## 📁 Project Structure
+
+```plaintext
 IntegProject/
 │
-├── public/                 # Frontend assets (CSS, JS, images)
-│   ├── css/
-│   ├── js/
-│   └── images/
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── svg/
+│   │
+│   ├── database/
+│   │   └── database.sql
+│   │
+│   ├── includes/
+│   │   └── sidebar.php
+│   │
+│   ├── dashboard.php
+│   ├── index.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── posts.php
+│   ├── products.php
+│   ├── registration.php
+│   └── users.php
 │
-├── test.php                # Main PHP file
-├── README.md               # Documentation
-└── .gitignore              # Ignored files
+├── test.php
+└── README.md
 ```
 
 ---
 
-# 🚀 Features
+## ⚙️ Installation Guide
 
-✅ PHP backend support  
-✅ Organized project structure  
-✅ Public asset directory  
-✅ Easy local server setup  
-✅ Beginner-friendly layout  
-✅ Expandable architecture
-
----
-
-# 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| PHP | Backend scripting |
-| HTML5 | Structure |
-| CSS3 | Styling |
-| JavaScript | Frontend interactivity |
-
----
-
-# ⚙️ Requirements
-
-Before running the project, make sure you have:
-
-- PHP 7.4 or higher
-- A local server environment such as:
-  - XAMPP
-  - Laragon
-  - WAMP
-  - MAMP
-- Git (optional)
-
----
-
-# 📦 Installation
-
-## 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/a-BleakPotato/IntegProject.git
 ```
 
----
+### 2. Move the Project to XAMPP
 
-## 2️⃣ Navigate Into the Project Folder
+Place the folder inside:
 
-```bash
-cd IntegProject
+```plaintext
+C:\xampp\htdocs\
 ```
 
+### 3. Start Apache & MySQL
+
+Open the XAMPP Control Panel and start:
+
+* Apache
+* MySQL
+
 ---
 
-## 3️⃣ Run the PHP Development Server
+## 🗄️ Database Setup
 
-```bash
-php -S localhost:8000
-```
-
----
-
-## 4️⃣ Open in Browser
+### 1. Open phpMyAdmin
 
 Visit:
 
-```bash
-http://localhost:8000
+```plaintext
+http://localhost/phpmyadmin
+```
+
+### 2. Create a Database
+
+Create a new database (example):
+
+```plaintext
+integproject
+```
+
+### 3. Import SQL File
+
+Import the file located at:
+
+```plaintext
+public/database/database.sql
 ```
 
 ---
 
-# 🧪 Usage
+## ▶️ Running the Project
 
-### Run the Main PHP File
+Open your browser and visit:
 
-The main backend file is:
-
-```bash
-test.php
-```
-
-You can modify this file to:
-
-- Test PHP scripts
-- Handle forms
-- Connect APIs
-- Process backend logic
-- Practice server-side programming
-
----
-
-# 🎨 Frontend Assets
-
-Store frontend resources inside:
-
-```bash
-public/
-```
-
-Recommended structure:
-
-```bash
-public/
-├── css/
-├── js/
-└── images/
-```
-
-Example:
-
-```html
-<link rel="stylesheet" href="public/css/style.css">
-<script src="public/js/app.js"></script>
+```plaintext
+http://localhost/IntegProject/public/
 ```
 
 ---
 
-# 🔧 Development Tips
+## 📸 Pages Included
 
-## Using XAMPP
-
-1. Move the project into:
-
-```bash
-htdocs/
-```
-
-2. Start Apache
-
-3. Open:
-
-```bash
-http://localhost/IntegProject
-```
+| Page               | Description       |
+| ------------------ | ----------------- |
+| `index.php`        | Landing/Home Page |
+| `login.php`        | User Login        |
+| `registration.php` | User Registration |
+| `dashboard.php`    | Main Dashboard    |
+| `users.php`        | User Management   |
+| `posts.php`        | Posts Section     |
+| `products.php`     | Products Section  |
+| `logout.php`       | Session Logout    |
 
 ---
 
-## Using Laragon
+## 🎨 UI Assets
 
-1. Place the project inside:
+The project includes:
 
-```bash
-www/
-```
-
-2. Start Laragon
-
-3. Visit:
-
-```bash
-http://integproject.test
-```
+* Custom SVG icons
+* Responsive layouts
+* Dashboard navigation
+* Sidebar component
+* Hover and active states
 
 ---
 
-# 🌱 Future Improvements
+## 🔒 Authentication
 
-Possible additions for this project:
+The application includes:
 
-- Database integration
-- User authentication
-- REST API support
-- MVC structure
-- Environment configuration
-- Composer dependencies
-- Routing system
-- Form validation
-- Admin dashboard
+* Login validation
+* Registration form validation
+* Logout functionality
+* Session-based access flow
 
 ---
 
-# 🤝 Contributing
+## 📚 Learning Objectives
 
-Contributions are welcome.
+This project demonstrates:
 
-## Steps
+* PHP fundamentals
+* CRUD-ready structure
+* Authentication systems
+* Frontend and backend integration
+* Responsive web design
+* File organization best practices
+
+---
+
+## 🤝 Contributing
+
+Contributions, improvements, and suggestions are welcome.
 
 1. Fork the repository
-2. Create a feature branch
-
-```bash
-git checkout -b feature-name
-```
-
+2. Create a new branch
 3. Commit your changes
-
-```bash
-git commit -m "Add feature"
-```
-
 4. Push the branch
-
-```bash
-git push origin feature-name
-```
-
 5. Open a Pull Request
 
 ---
 
-# 🐞 Issues
+## 📄 License
 
-If you encounter any bugs or issues, feel free to open an issue in the repository.
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
-You are free to use, modify, and distribute this project.
+This project is for educational and academic purposes.
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Developer
 
-Created by **a-BleakPotato**
+Developed by **a-BleakPotato**
 
 GitHub Repository:
-
 https://github.com/a-BleakPotato/IntegProject
-
----
-
-# ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
 
 ---
