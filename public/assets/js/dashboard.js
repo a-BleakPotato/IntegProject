@@ -1,9 +1,29 @@
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.getElementById("toggle-btn");
 
+// Restore sidebar
+
+const sidebarState = sessionStorage.getItem("sidebarState");
+
+if (sidebarState === "expanded") {
+    sidebar.classList.remove("collapsed");
+} else {
+    sidebar.classList.add("collapsed");
+}
+
+// Toggle sidebar
+
 toggleBtn.addEventListener("click", () => {
     sidebar.classList.toggle("collapsed");
+
+    if (sidebar.classList.contains("collapsed")) {
+        sessionStorage.setItem("sidebarState", "collapsed");
+    } else {
+        sessionStorage.setItem("sidebarState", "expanded");
+    }
 });
+
+// Icon hover
 
 const links = document.querySelectorAll(".nav-link");
 
@@ -12,26 +32,45 @@ links.forEach((link) => {
 
     if (!icon) return;
 
-    const original = icon.src;
-    const hover = icon.dataset.hover;
+    const defaultIcon = icon.dataset.default;
+    const hoverIcon = icon.dataset.hover;
+    const activeIcon = icon.dataset.active;
+
+    // Hover in
 
     link.addEventListener("mouseenter", () => {
-        if (hover) {
-            icon.src = hover;
+        // STOP if active
+        if (link.classList.contains("active")) return;
+
+        if (hoverIcon) {
+            icon.src = hoverIcon;
         }
     });
 
+    // Hover out
+
     link.addEventListener("mouseleave", () => {
-        icon.src = original;
+        // KEEP ACTIVE ICON
+        if (link.classList.contains("active")) {
+            icon.src = activeIcon;
+        } else {
+            icon.src = defaultIcon;
+        }
     });
 });
 
-const today = new Date();
+// Date
 
-const formatted = today.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-});
+const dateElement = document.getElementById("date");
 
-document.getElementById("date").textContent = formatted;
+if (dateElement) {
+    const today = new Date();
+
+    const formatted = today.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+
+    dateElement.textContent = formatted;
+}

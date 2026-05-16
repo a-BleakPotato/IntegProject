@@ -16,6 +16,7 @@ if (!isset($_SESSION["user_id"])) {
     <title>Dashboard</title>
 
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
 </head>
 
 <body>
@@ -23,114 +24,7 @@ if (!isset($_SESSION["user_id"])) {
     <div class="wrapper">
 
         <!-- SIDEBAR -->
-        <aside class="sidebar collapsed" id="sidebar">
-
-            <!-- TOP -->
-            <div class="sidebar-top">
-
-                <button class="toggle-btn" id="toggle-btn">
-                    <img src="assets/svg/dashboard-solar_hamburger-menu-broken.svg" alt="">
-                </button>
-                <div class="logo-container">
-                    <h2 class="logo-text">DummyJSON API</h2>
-                </div>
-
-            </div>
-
-            <!-- MIDDLE -->
-            <div class="sidebar-links">
-                <!-- DASHBOARD -->
-                <a href="dashboard/php" class="nav-link active">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/dashboard-active.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Dashboard
-                        </span>
-                    </div>
-                </a>
-
-                <!-- PRODUCTS -->
-                <a href="products.php" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/products.svg"
-                            data-hover="assets/svg/products-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Products
-                        </span>
-                    </div>
-                </a>
-
-                <!-- USERS -->
-                <a href="#" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/users.svg"
-                            data-hover="assets/svg/users-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Users
-                        </span>
-                    </div>
-                </a>
-
-                <!-- POSTS -->
-                <a href="#" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/posts.svg"
-                            data-hover="assets/svg/posts-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Posts
-                        </span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- BOTTOM -->
-            <div class="sidebar-bottom">
-                <!-- LOGOUT -->
-                <a href="logout.php" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/logout.svg"
-                            data-hover="assets/svg/logout-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Logout
-                        </span>
-                    </div>
-                </a>
-
-                <!-- USER PROFILE -->
-                <div class="user-profile">
-                    <div class="avatar"></div>
-                    <div class="user-details">
-                        <h4><?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"]; ?></h4>
-                        <p><?php echo $_SESSION["email"]; ?></p>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        <?php include 'includes/sidebar.php'; ?>
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
@@ -156,42 +50,54 @@ if (!isset($_SESSION["user_id"])) {
                 <hr />
 
                 <div class="contents">
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Products
-                            </h2>
-                            <p>https://dummyjson.com/products</p>
+                    <a href="products.php" class="items-link">
+                        <div class="items">
+                            <div class="item-text">
+                                <h2>
+                                    View Products
+                                </h2>
+                                <p>https://dummyjson.com/products</p>
+                            </div>
+                            <img src="assets/svg/products-dashboard.svg" alt="">
                         </div>
-                        <img src="assets/svg/products-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Users
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
+                    </a>
+
+                    <a href="users.php" class="items-link">
+                        <div class="items">
+                            <div class="item-text">
+                                <h2>
+                                    View Users
+                                </h2>
+                                <p>https://dummyjson.com/users</p>
+                            </div>
+                            <img src="assets/svg/users-dashboard.svg" alt="">
                         </div>
-                        <img src="assets/svg/users-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Carts
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
+                    </a>
+
+                    <a href="users.php" class="items-link">
+                        <div class="items">
+                            <div class="item-text">
+                                <h2>
+                                    View Carts
+                                </h2>
+                                <p>https://dummyjson.com/users</p>
+                            </div>
+                            <img src="assets/svg/cart-dashboard.svg" alt="">
                         </div>
-                        <img src="assets/svg/cart-dashboard.svg" alt="">
-                    </div>
-                    <div class="items">
-                        <div class="item-text">
-                            <h2>
-                                View Posts
-                            </h2>
-                            <p>https://dummyjson.com/users</p>
+                    </a>
+
+                    <a href="posts.php" class="items-link">
+                        <div class="items">
+                            <div class="item-text">
+                                <h2>
+                                    View Posts
+                                </h2>
+                                <p>https://dummyjson.com/users</p>
+                            </div>
+                            <img src="assets/svg/posts-dashboard.svg" alt="">
                         </div>
-                        <img src="assets/svg/posts-dashboard.svg" alt="">
-                    </div>
+                    </a>
+
             </section>
         </main>
 

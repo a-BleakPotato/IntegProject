@@ -15,7 +15,8 @@ if (!isset($_SESSION["user_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
 </head>
 
 <body>
@@ -23,121 +24,82 @@ if (!isset($_SESSION["user_id"])) {
     <div class="wrapper">
 
         <!-- SIDEBAR -->
-        <aside class="sidebar collapsed" id="sidebar">
-
-            <!-- TOP -->
-            <div class="sidebar-top">
-
-                <button class="toggle-btn" id="toggle-btn">
-                    <img src="assets/svg/dashboard-solar_hamburger-menu-broken.svg" alt="">
-                </button>
-                <div class="logo-container">
-                    <h2 class="logo-text">DummyJSON API</h2>
-                </div>
-
-            </div>
-
-            <!-- MIDDLE -->
-            <div class="sidebar-links">
-                <!-- DASHBOARD -->
-                <a href="dashboard.php" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/dashboard.svg"
-                            data-hover="assets/svg/dashboard-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Dashboard
-                        </span>
-                    </div>
-                </a>
-
-                <!-- PRODUCTS -->
-                <a href="#" class="nav-link active">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/products-active.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Products
-                        </span>
-                    </div>
-                </a>
-
-                <!-- USERS -->
-                <a href="#" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/users.svg"
-                            data-hover="assets/svg/users-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Users
-                        </span>
-                    </div>
-                </a>
-
-                <!-- POSTS -->
-                <a href="#" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/posts.svg"
-                            data-hover="assets/svg/posts-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Posts
-                        </span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- BOTTOM -->
-            <div class="sidebar-bottom">
-                <!-- LOGOUT -->
-                <a href="logout.php" class="nav-link">
-                    <div class="link-content">
-
-                        <img
-                            class="nav-icon"
-                            src="assets/svg/logout.svg"
-                            data-hover="assets/svg/logout-hover.svg"
-                            alt="">
-
-                        <span class="link-text">
-                            Logout
-                        </span>
-                    </div>
-                </a>
-
-                <!-- USER PROFILE -->
-                <div class="user-profile">
-                    <div class="avatar"></div>
-                    <div class="user-details">
-                        <h4><?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"]; ?></h4>
-                        <p><?php echo $_SESSION["email"]; ?></p>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        <?php include 'includes/sidebar.php'; ?>
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
-            <section class="dashboard-section">
+            <section class="products-section">
                 <h2>
                     Products
                 </h2>
+
+                <div class="contents">
+
+                    <?php
+                    $apiKey = "YOUR API KEY";
+                    $url = "https://dummyjson.com/products";
+
+                    $ch = curl_init($url);
+
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+                    $response = curl_exec($ch);
+
+                    if ($response === false) {
+                        echo "API not responding: " . curl_error($ch);
+                        curl_close($ch);
+                        exit;
+                    }
+
+                    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                    curl_close($ch);
+
+                    if ($httpCode != 200) {
+                        echo "API returned status code: " . $httpCode;
+                        exit;
+                    }
+
+                    $data = json_decode($response, true);
+
+                    foreach ($data['products'] as $product) {
+                    ?>
+
+                        <div class="items">
+
+                            <div class="stock-tag">
+                                Stock: <?php echo $product['stock']; ?>
+                            </div>
+
+                            <img
+                                class="thumbnail"
+                                src="<?php echo $product['thumbnail']; ?>"
+                                alt="<?php echo $product['title']; ?>">
+
+                            <div class="item-text">
+
+                                <p class="category">
+                                    <?php echo $product['category']; ?>
+                                </p>
+
+                                <h3 class="product-name">
+                                    <?php echo $product['title']; ?>
+                                </h3>
+
+                                <h4 class="price">
+                                    $<?php echo $product['price']; ?>
+                                </h4>
+
+                            </div>
+
+                        </div>
+
+                    <?php
+                    }
+                    ?>
+
+                </div>
+
             </section>
         </main>
 

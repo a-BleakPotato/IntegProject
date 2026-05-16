@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #b4e9ff;
+    --accent-color: #072843;
+
+    --primary-text-color: #072843;
+    --secondary-text-color: #0083bc;
+
+    --line-color: #072843;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--accent-color);
+
+    overflow: hidden;
+}
+
+/* WRAPPER */
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 340px;
+    height: 100vh;
+
+    background-color: var(--accent-color);
+
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    transition: width 0.35s ease;
+
+    overflow: hidden;
+}
+
+/* COLLAPSED */
+
+.sidebar.collapsed {
+    width: 120px;
+}
+
+/* TOP */
+
+.sidebar-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 15px;
+
+    margin-top: 3rem;
+}
+
+/* LOGO */
+
+.logo-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+/* TOGGLE BUTTON */
+
+.toggle-btn {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.toggle-btn img {
+    width: 40px;
+}
+
+/* LINKS */
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    flex: 1;
+}
+
+/* NAV LINK */
+
+.nav-link {
+    text-decoration: none;
+
+    border-radius: 18px;
+    width: 100%;
+
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-text-color);
+}
+
+/* LINK CONTENT */
+
+.link-content {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem;
+
+    transition:
+        padding 0.3s ease,
+        gap 0.3s ease;
+}
+
+/* ICONS */
+
+.link-content img {
+    width: 40px;
+    min-width: 40px;
+}
+
+/* LINK TEXT */
+
+.link-text {
+    color: var(--secondary-color);
+
+    font-size: 20px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+/* ACTIVE LINK */
+
+.nav-link.active {
+    background-color: var(--secondary-color);
+}
+
+.nav-link.active .link-text {
+    color: var(--primary-text-color);
+}
+/* COLLAPSED STATE */
+
+.sidebar.collapsed .logo-text,
+.sidebar.collapsed .link-text,
+.sidebar.collapsed .user-details {
+    opacity: 0;
+
+    width: 0;
+
+    overflow: hidden;
+
+    transform: translateX(-20px);
+
+    pointer-events: none;
+}
+
+/* CENTER ICONS */
+
+.sidebar.collapsed .link-content {
+    gap: 0;
+}
+
+/* BOTTOM */
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+/* USER PROFILE */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+/* AVATAR */
+
+.avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    flex-shrink: 0;
+}
+
+/* USER DETAILS */
+
+.user-details {
+    color: white;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+.user-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.user-details p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
