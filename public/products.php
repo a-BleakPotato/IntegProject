@@ -5,6 +5,37 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
+
+// FETCH PRODUCTS ONLY ONCE
+$url = "https://dummyjson.com/products";
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+$response = curl_exec($ch);
+
+if ($response === false) {
+    die("API not responding: " . curl_error($ch));
+}
+
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+if ($httpCode != 200) {
+    die("API returned status code: " . $httpCode);
+}
+
+$data = json_decode($response, true);
+
+// CATEGORIES TO DISPLAY
+$categories = [
+    "beauty",
+    "fragrances",
+    "furniture",
+    "groceries"
+];
 ?>
 
 <!DOCTYPE html>
@@ -29,76 +60,57 @@ if (!isset($_SESSION["user_id"])) {
         <!-- MAIN CONTENT -->
         <main class="main-content">
             <section class="products-section">
-                <h2>
-                    Products
-                </h2>
 
-                <div class="contents">
+                <h2>Products</h2>
 
-                    <?php
-                    $apiKey = "YOUR API KEY";
-                    $url = "https://dummyjson.com/products";
+                <?php foreach ($categories as $category): ?>
 
-                    $ch = curl_init($url);
+                    <div class="item-category">
+                        <?php echo ucfirst($category); ?>
+                    </div>
 
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                    <div class="contents">
 
-                    $response = curl_exec($ch);
+                        <?php foreach ($data['products'] as $product): ?>
 
-                    if ($response === false) {
-                        echo "API not responding: " . curl_error($ch);
-                        curl_close($ch);
-                        exit;
-                    }
+                            <?php if ($product['category'] === $category): ?>
 
-                    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                    curl_close($ch);
+                                <div class="items">
 
-                    if ($httpCode != 200) {
-                        echo "API returned status code: " . $httpCode;
-                        exit;
-                    }
+                                    <div class="stock-tag">
+                                        Stock: <?php echo $product['stock']; ?>
+                                    </div>
 
-                    $data = json_decode($response, true);
+                                    <img
+                                        class="thumbnail"
+                                        src="<?php echo $product['thumbnail']; ?>"
+                                        alt="<?php echo htmlspecialchars($product['title']); ?>">
 
-                    foreach ($data['products'] as $product) {
-                    ?>
+                                    <div class="item-text">
 
-                        <div class="items">
+                                        <p class="category">
+                                            <?php echo ucfirst($product['category']); ?>
+                                        </p>
 
-                            <div class="stock-tag">
-                                Stock: <?php echo $product['stock']; ?>
-                            </div>
+                                        <h3 class="product-name">
+                                            <?php echo htmlspecialchars($product['title']); ?>
+                                        </h3>
 
-                            <img
-                                class="thumbnail"
-                                src="<?php echo $product['thumbnail']; ?>"
-                                alt="<?php echo $product['title']; ?>">
+                                        <h4 class="price">
+                                            $<?php echo $product['price']; ?>
+                                        </h4>
 
-                            <div class="item-text">
+                                    </div>
 
-                                <p class="category">
-                                    <?php echo $product['category']; ?>
-                                </p>
+                                </div>
 
-                                <h3 class="product-name">
-                                    <?php echo $product['title']; ?>
-                                </h3>
+                            <?php endif; ?>
 
-                                <h4 class="price">
-                                    $<?php echo $product['price']; ?>
-                                </h4>
+                        <?php endforeach; ?>
 
-                            </div>
+                    </div>
 
-                        </div>
-
-                    <?php
-                    }
-                    ?>
-
-                </div>
+                <?php endforeach; ?>
 
             </section>
         </main>
