@@ -148,7 +148,11 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <!-- USER PROFILE -->
         <div class="user-profile">
 
-            <div class="avatar"></div>
+            <div class="avatar">
+                <img
+                    src="assets/images/default-avatar.jpg"
+                    alt="User Avatar">
+            </div>
 
             <div class="user-details">
                 <h4>

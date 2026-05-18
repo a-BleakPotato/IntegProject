@@ -8,7 +8,7 @@
     --primary-text-color: #072843;
     --secondary-text-color: #0083bc;
 
-    --line-color: #072843;
+    --line-color: #d9d9d9;
 }
 
 * {
@@ -20,7 +20,6 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--accent-color);
-
     overflow: hidden;
 }
 
@@ -44,14 +43,135 @@ body {
 
     margin-top: 2rem;
     margin-right: 20px;
+
     border-radius: 20px;
+
     background-color: var(--primary-color);
 }
 
-/* DASHBOARD SECTION */
+/* POSTS SECTION */
 
 .posts-section h2 {
     font-size: 24px;
     font-weight: 600;
     color: var(--secondary-text-color);
+
+    margin-bottom: 2rem;
+}
+
+/* POSTS CONTAINER */
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+
+    gap: 2rem;
+}
+
+/* POST CARD */
+
+.post-card {
+    width: 100%;
+    max-width: 850px;
+
+    border: 3px solid var(--accent-color);
+    border-radius: 24px;
+
+    padding: 1.5rem;
+    box-shadow: 8px 8px 0 var(--accent-color);
+
+    transition: all 0.15s ease-in-out;
+}
+
+.post-card:hover {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transform: translate(4px, 4px);
+}
+
+/* CONTENT */
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+
+.post-body {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--primary-text-color);
+}
+
+/* TAGS */
+
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-top: 1rem;
+}
+
+.tag {
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+
+    padding: 6px 12px;
+
+    font-size: 0.85rem;
+    color: var(--primary-text-color);
+
+    background-color: #f7f7f7;
+}
+
+/* FOOTER */
+
+.post-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--line-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* STATS */
+
+.post-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--primary-text-color);
+}
+
+.stat i {
+    font-size: 1.2rem;
+}
+
+.stat span {
+    font-size: 0.95rem;
+}
+
+/* VIEWS */
+
+.views {
+    font-size: 0.95rem;
+    color: var(--primary-text-color);
 }
