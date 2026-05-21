@@ -34,7 +34,7 @@ body {
 /* SIDEBAR */
 
 .sidebar {
-    width: 340px;
+    width: 320px;
     height: 100vh;
 
     background-color: var(--accent-color);
@@ -71,7 +71,7 @@ body {
 
 .logo-text {
     color: white;
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 600;
 
     white-space: nowrap;
