@@ -77,7 +77,7 @@ body {
     max-width: 850px;
 
     border: 3px solid var(--accent-color);
-    border-radius: 24px;
+    border-radius: 30px;
 
     padding: 1.5rem;
     box-shadow: 8px 8px 0 var(--accent-color);
